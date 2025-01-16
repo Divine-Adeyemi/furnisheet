@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furnisheet</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet"  href="https://atugatran.github.io/FontAwesome6Pro/css/all.min.css" >>
+    <link rel="stylesheet"  href="https://atugatran.github.io/FontAwesome6Pro/css/all.min.css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -14,12 +14,18 @@
     <nav class="navbar">
         <div class="navbar-container">
             <!-- navbar-left-->
-            <ul class="menu-left">
+            <div class="dropdown-menu">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+             <ul class="menu-left">
+               
                 <li><a href="#">Furniture</a></li>
                 <li><a href="#"> How it works</a></li>
                 <li><a href="#"> About furnisheet</a></li>
                        
             </ul>
+            </div>
             <!--logo-->
             <div class="logo">
                 <img src="images/logo1.png" alt="logo" class="logo">
@@ -42,9 +48,9 @@
         <div class="container1">
                 <div class="side1">
                     <div class="side1-content">
-                        <h1>Rent,</h1>
-                        <h1>Furnish,</h1>
-                        <h1>Live.</h1>
+                        <h1>Rent,</h1><h1>Furnish,</h1><h1>Live.</h1>
+                        
+                        
                         <input type="button" value="Explore furniture" class="button">
                     </div>
                 </div>
@@ -56,41 +62,45 @@
 
         <div class="container2">
             <div class="container2-content">
-                <h1 class="container2-content-h1">
-                    how it works
-                </h1>
-                <article>
+                <article class="container2-box">
+                   <div><h1> how it <br>works</h1></div>
+                </article>
+                <article class="container2-box">
+                   <div>
                     <img src="images/Select.png" alt="line" class="Select" >  
-                    <div>
+                    
                         <p>Select preferred package or item</p>
                     </div>
                 </article>
                
-                <article>
-                    <img src="images/Pay.png" alt="line" class="Pay">   
+                <article class="container2-box">
                     <div>
+                     <img src="images/Pay.png" alt="line" class="Pay">   
+                    
                         <p>Make payment</p>
                     </div>
                 </article>
                
-                <article>
-                    <img src="images/Order.png" alt="line" class="Order"> 
+                <article class="container2-box">
                     <div>
-                        <p>Order is delivered by and assembled by furnisheet agents</p>
+                     <img src="images/Order.png" alt="line" class="Order"> 
+                    
+                        <p>Order is delivered by and n assembled by furnisheet agents</p>
                     </div>
                 </article>
               
-                <article>
-                   
-                    <img src="images/Sign.png" alt="line" class="Sign">
-                    <div>
+                <article class="container2-box">
+                    <div>    
+                     <img src="images/Sign.png" alt="line" class="Sign">
+                    
                         <p>Sign rental agreements</p>
                     </div>
                 </article>
  
-                <article>
-                    <img src="images/Delivery.png" alt="line" class="Delivery">  
+                <article class="container2-box"> 
                     <div>
+                     <img src="images/Delivery.png" alt="line" class="Delivery">  
+                    
                         <p>Agent picks up furniture at the end of rental period</p>
                     </div>
                 </article>
@@ -117,7 +127,7 @@
         <div class="container4">
             <div class="container4-content">
                 <article class="container4-content-article">
-                  <h1>Our Products</h1>
+                  <h1>Our packages</h1>
                 </article>
  
                     <article>
@@ -147,7 +157,7 @@
         <div class="container5">
             <div class="container5-content">
                 <article class="container5-content-article">
-                  <h1>Our Products</h1>
+                  <h1>Best selling products</h1>
                 </article>
  
                     
@@ -215,7 +225,7 @@
          <div class="container8">
             <div class="container8-content">
                <div class="container8-header">What our Customers have to say</div>
-               <div class="arrow"><i class="fa-solid fa-circle-arrow-right"></i></div>
+               <div class="arrow"><i class="fa-regular fa-circle-arrow-left"></i></i></div>
               
                <div class="container8-box">
                 <div class="reviews">
@@ -268,7 +278,7 @@
 
 
                </div>
-              <div class="arrow"> <i class="fa-solid fa-circle-arrow-right"></i> </div>
+              <div class="arrow"> <i class="fa-regular fa-circle-arrow-right"></i></i> </div>
                     
             </div>
         </div>
