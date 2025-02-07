@@ -20,13 +20,13 @@
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
-             <ul class="menu-left">
+                <ul class="menu-left">
                
-                <li><a href="#">Furniture</a></li>
-                <li><a href="#"> How it works</a></li>
-                <li><a href="#"> About furnisheet</a></li>
-                       
-            </ul>
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#"> How it works</a></li>
+                    <li><a href="#"> About furnisheet</a></li>
+                        
+                </ul>
             </div>
             <!--logo-->
             <div class="logo">
@@ -36,7 +36,30 @@
             
              <!-- navbar-right-->
                 <ul class="menu-right">
-                    <li><a href="#"><img src="images/Vector.svg" > Pick a location</a></li>
+                    <li>
+                        <a href="javascript:void(0);" onclick="openLocationModal()">
+                            <img src="images/Vector.svg"> Pick a location
+                        </a>
+                    
+                        <!-- Checkbox Container (Hidden by Default) -->
+                        <div id="locationModal" class="checkbox-container">
+                            <button class="close-btn" onclick="closeLocationModal()">✖</button>
+                            <div class="checkbox-title">Choose your delivery location</div>
+                            
+                            <!-- Lagos Option -->
+                            <div class="option">
+                                <input type="radio" id="lagos" name="location">
+                                <label for="lagos">Lagos</label>
+                            </div>
+                    
+                            <!-- Abuja Option -->
+                            <div class="option">
+                                <input type="radio" id="abuja" name="location">
+                                <label for="abuja">Abuja</label>
+                            </div>
+                        </div>
+                    </li>
+                    
                     <li><a href="#"><img src="images/ACCOUNT.svg" ></a></li>
                     <li><a href="#"><img src="images/SEARCH.svg" ></a></li>
                     <li><a href="#"><img src="images/CART.svg" ></a></li>
@@ -61,7 +84,33 @@
 
                 <div class="side2">
                     <div class="side2-container">
-                        <img src="images/Need Help_.png" class="needhelp">
+                        <!-- Need Help Button (SVG) -->
+                        <div id="needHelpBtn" class="need-help-btn">
+                            <img src="images/Need Help_.svg" class="needhelp">
+                            </div>
+                            
+                           <!-- Chatbox Container -->
+                            <div id="chatbox" class="chatbox">
+                                <div class="chatbox-header">
+                                    <span>Chat with us</span>
+                                    <button id="closeChatbox">&times;</button>
+                                </div>
+                                <div class="chatbox-body">
+                                    <div class="chatbot-message">
+                                        <span class="chatbot-name">Furnisheet</span>
+                                        <p class="chat-message">How can we help you?</p>
+                                    </div>
+                                    <div class="user-input-container">
+                                        <div class="user-message">
+                                            <textarea id="userInput" placeholder="Type your message..."></textarea>
+                                        </div>
+                                        <button class="send-btn">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+
+    
+                        
                     </div>  
                     </div>
         </div>            
@@ -399,7 +448,8 @@
         
     </div> 
                 
+    <script src="js/index.js"></script>
 
 </body>    
-</body>
+
 </html>
