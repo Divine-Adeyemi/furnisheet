@@ -14,6 +14,27 @@
 function closeLocationModal() {
     document.getElementById("locationModal").style.display = "none";
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const furnitureLink = document.querySelector("[dropdown-toggle]"); // Selects the "Furniture" link
+    const megaMenu = document.querySelector(".mega-menu");
+
+    // Toggle dropdown on click
+    furnitureLink.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents page jump
+        event.stopPropagation(); // Prevents immediate closing
+        megaMenu.classList.toggle("show"); // Toggle visibility
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!furnitureLink.contains(event.target) && !megaMenu.contains(event.target)) {
+            megaMenu.classList.remove("show");
+        }
+    });
+});
+
+
+
 
     document.addEventListener("DOMContentLoaded", function () {
         const needHelpBtn = document.getElementById("needHelpBtn");
