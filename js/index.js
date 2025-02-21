@@ -11,6 +11,65 @@
     document.getElementById("locationModal").style.display = "block";
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const breadcrumbContainer = document.querySelector(".breadcrumbs");
+
+    if (!breadcrumbContainer) {
+        console.error("❌ Breadcrumb container not found!");
+        return;
+    }
+
+    // Get current page URL (excluding query params)
+    let currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    // Convert "index.html" to "Home"
+    let formattedCurrentPage = currentPage === "index.html" ? "Home" : formatBreadcrumb(currentPage);
+
+    // Retrieve breadcrumb history or initialize it
+    let breadcrumbHistory = JSON.parse(sessionStorage.getItem("breadcrumbHistory")) || ["Home"];
+
+    // Remove "index.html" if already in the list
+    if (breadcrumbHistory[0] === "index.html") {
+        breadcrumbHistory[0] = "Home";
+    }
+
+    // If revisiting an earlier page, truncate the trail
+    let currentPageIndex = breadcrumbHistory.indexOf(formattedCurrentPage);
+    if (currentPageIndex !== -1) {
+        breadcrumbHistory = breadcrumbHistory.slice(0, currentPageIndex + 1);
+    } else {
+        breadcrumbHistory.push(formattedCurrentPage);
+    }
+
+    // Save updated breadcrumbs
+    sessionStorage.setItem("breadcrumbHistory", JSON.stringify(breadcrumbHistory));
+
+    // Generate breadcrumb HTML
+    breadcrumbContainer.innerHTML = breadcrumbHistory
+        .map((page, index) => {
+            let pageURL = page === "Home" ? "index.html" : page.replace(/\s/g, "-").toLowerCase() + ".html";
+
+            return index < breadcrumbHistory.length - 1
+                ? `<a href="${pageURL}" class="breadcrumb-link" data-page="${page}">${page}</a>`
+                : `<span>${page}</span>`;
+        })
+        .join(" > ");
+
+    // Handle clicking on a breadcrumb to go back
+    document.querySelectorAll(".breadcrumb-link").forEach(link => {
+        link.addEventListener("click", function (event) {
+            let clickedPage = this.getAttribute("data-page");
+            let newHistory = breadcrumbHistory.slice(0, breadcrumbHistory.indexOf(clickedPage) + 1);
+            sessionStorage.setItem("breadcrumbHistory", JSON.stringify(newHistory));
+        });
+    });
+});
+
+// Format breadcrumb text (e.g., "all-furniture.html" → "All Furniture")
+function formatBreadcrumb(filename) {
+    return filename.replace(".html", "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
 function closeLocationModal() {
     document.getElementById("locationModal").style.display = "none";
 }

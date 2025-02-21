@@ -1,0 +1,442 @@
+
+
+.navbar {
+    color: #000; 
+    height: 140px;
+    opacity: 1;
+    background-color: #fff;  
+    position: static;
+       
+}
+.navbar:empty{
+    display: none;
+}
+
+.navbar-container {
+    position: sticky;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 90px;
+    padding-right: 50px;
+    z-index: 1000;
+    opacity: 1;
+    background-color: #fff;  
+    box-shadow: 0px 1px 1px #D0D0D0;
+    
+}
+.navbar li{
+    list-style: none;
+
+}
+.navbar a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    
+}
+/* Navbar underline effect */
+.menu-left li a{
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 10px; /* Space between text and underline */
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-left li a::after{
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #FC8510; /* Orange underline */
+    transition: all 0.3s ease-in-out;
+
+}
+
+.menu-left li a:hover::after{
+
+    width: 100%;
+
+}
+/* Dropdown Styling */
+.dropdown {
+    position: static;
+}
+
+.mega-menu {
+    display:none ;
+    position: absolute;
+    top: calc(90px + 10px);;
+    left: 0%;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    width:100vw; /* Adjust width */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+.mega-menu.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-column {
+    
+    width:fit-content
+}
+
+.mega-column h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.mega-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-column li {
+    padding: 5px 0;
+}
+
+.mega-column li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px;
+}
+
+.mega-column li a:hover {
+    background: #FC8510;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Show mega menu on hover */
+.dropdown:hover .mega-menu {
+    display: flex;
+}
+
+/* Show mega menu on click */
+.dropdown.active .mega-menu {
+    display: flex;
+}
+
+
+.logo {
+    height: 30px;
+    max-width: 173px; 
+    border: none;
+    display: flex;
+    justify-content:space-around ;
+}
+.dropdown-menu {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out the hamburger icon and menu */
+    padding: 10px 20px; /* Add some padding for better spacing */
+    background-color: #fff; /* Optional: Background color for the menu bar */
+
+}
+.icon {
+    display: none; /* Hide by default (for desktop) */
+    cursor: pointer; /* Add a pointer cursor */
+}
+
+.icon i {
+    font-size: 24px; /* Size of the hamburger icon */
+}
+
+.menu-left {
+    display: flex;
+    width: 400px;
+    justify-content:space-evenly;
+}
+.menu-left li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #FC8510; 
+    transition: width 0.9s ease-in-out;
+}
+
+
+.menu-right {
+    display: flex;
+    width: 320px;
+    height: 30px;
+    justify-content:space-evenly; 
+    align-items: center;
+    gap: 5px;  
+}
+.menu-right li a img {
+    width: auto; /* Adjust size if necessary */
+    height: auto;
+    vertical-align: middle; /* Ensures proper alignment */
+}
+
+.menu-right a:hover::after{
+    width: 100%;
+}
+  /* Container styling */
+  .checkbox-container {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 110%;
+    right: 70px;  
+    z-index: 1000; 
+   display: none;
+}
+
+/* Title */
+.checkbox-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Cancel button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    
+}
+.close-btn:hover{
+    color:red;
+}
+
+
+/* Custom Radio Button Styles */
+.option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.option input {
+    display: none;
+}
+
+.option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Custom Radio Circle */
+.option label::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #333;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+/* Show filled circle when selected */
+.option input:checked + label::before {
+    content: "✔";
+    color: #Ffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FC8510;
+    border-color: #FC8510;
+    
+}
+.breadcrumbs-container {
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;  /* Ensure visibility */
+    padding: 12px 20px;
+    box-shadow: 0px 1px 1px #D0D0D0;
+    position: static; /* Stays in place */
+    top: 94px; /* Adjust based on navbar height */
+    left: 0;
+    z-index: 1001; /* Higher than navbar */
+}
+.breadcrumbs-container:empty {
+    display: none; 
+}
+
+.breadcrumbs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+   color: #FC8510;
+}
+
+.breadcrumbs span {
+    color: #999;
+}
+
+
+@media (max-width: 970px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+
+    }
+    .navbar-container {
+        position: relative;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0px;
+        
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-right: 10px;
+       
+    }
+
+
+    .menu-left {
+        max-width:500px ;
+        
+        box-sizing: border-box;
+        
+    }
+    .menu-right li a span {
+        display: none;
+    }
+    
+   
+    .menu-left li a{
+        font-size: 14px;
+        font-weight: 500;}
+
+
+
+    .logo {
+        max-width: 173px;
+        height: auto;
+        
+    }
+    .menu-right{
+       max-width: 250px; 
+       
+    }
+    
+    .menu-right > :nth-child(1) {
+        display: ;
+    }
+}
+
+
+@media (max-width: 800px) {
+.navbar-container {
+    position: relative;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0px;
+    
+}
+
+.navbar a {
+    font-size: 12px;
+    margin-right: 10px;
+}
+.navbar a :hover{
+   color: #FC8510;
+}
+
+.icon {
+    display: flex; /* Show the hamburger icon on mobile */
+    align-items: center;
+}
+
+.menu-left {
+    display: none;
+    flex-direction: column; 
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+    left: ; 
+    top: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    
+}
+.menu-left > * {
+    max-width: 100%;
+    flex-shrink: 0;
+}
+ 
+.menu-left.show {
+    display: flex; /* Show when 'show' class is added */
+}
+.menu-left li{
+    padding: 20px 20px;
+    border-radius: 5px;
+    background-color: #F6F6F5;   
+    border-bottom: .5px solid #D0D0D0;
+}
+.menu-left li a{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.menu-left li:hover{
+    background-color:#9B9B9B;
+}
+
+.logo {
+    min-width: 120px;
+    height: auto;
+    
+}
+.menu-right{
+   max-width: 250px; 
+   
+}
+
+.menu-right > :nth-child(1) {
+    display: none;
+}
+
+
+}

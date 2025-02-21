@@ -1,0 +1,264 @@
+@font-face {
+    font-family: poppins;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+}
+
+*{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-family: poppins;
+}
+
+
+.All-furniture-body{
+    
+}
+.furniture{
+  width: 100%;
+  height: auto;
+  background: #FBFBFB;
+  
+}
+
+.furniture h1{
+  font-size: 30px;
+  font-weight: 700;
+  color: #13293D;
+  display: inline-block;
+  padding-left: 7%;
+  
+}
+.container1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
+  height: fit-content;
+  gap: auto;
+}
+
+.container1 span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #13293D;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+/* Container */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.custom-dropdown p{
+
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 200px;
+}
+/* Dropdown Button */
+.dropdown-btn {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Dropdown Options */
+.dropdown-options {
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #D0D0D0;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Option */
+.dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+.dropdown-options li:hover {
+    background: black;
+    color: white;
+}
+
+/* Show Dropdown */
+.custom-dropdown.active .dropdown-options {
+    display: block;
+}
+
+.all-furniture{
+  margin-top: 40px;
+  padding: 0 7%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  row-gap: 30px;
+  place-items: center;
+  align-items: stretch;
+}
+.furniture-item{
+ max-width:300px;
+ margin: auto;
+ height: 100%;
+
+}
+
+.furniture-item img{
+  max-width: 240px;
+  max-height: 200px;
+  border: 1px;
+  border-radius: 3px;
+  margin: auto;
+  
+}
+
+.all-furniture .furniture-item:has(button) {
+    
+    background-color: #FBFBFB;
+    max-height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.all-furniture .furniture-item:has(button) h3{
+    width: 90%;
+    padding-bottom: 8%;
+    
+}
+
+.furniture-item-text{
+    padding-top: 10px;
+    text-align: center;
+    max-width: 200px;}
+    
+.furniture-item-text h3{
+    font-size:15px;
+    line-height: 20px;
+
+    font-weight: 400;
+}
+.furniture-item-text p{
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 300;
+}
+
+.furniture-item button {
+    background:transparent;
+    padding: 10px 20px;
+    border: 1px solid #13293D;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px;
+    height: auto;
+    font-size: 14px;
+}
+
+.furniture-item button:hover {
+    background-color: #fc8510;
+}
+.reviews{
+    text-align: center;
+    color:#FC8510;
+    cursor:pointer;   
+ }
+
+@media (max-width: 800px) {
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        max-width: 200px;
+    }
+    
+    .custom-dropdown p{
+    
+        font-size: 12px;
+        font-weight: 500;
+        max-width: 200px;
+    }
+    /* Dropdown Button */
+    .dropdown-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        
+        
+    }
+    
+    /* Dropdown Options */
+    .dropdown-options {
+        max-width: 140px;
+    }
+    
+    /* Individual Option */
+    .dropdown-options li {
+        padding: 10px;
+        font-size: 12px;
+}
+
+
+
+
+
+  .all-furniture{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .furniture h1
+  {
+    font-size: 22px;
+  }  
+  .furniture-item{
+    height: fit-content;
+    max-width:300px;
+   }
+   
+  
+
+   .furniture-item img{
+     max-width: 150px;
+     max-height: 150px;
+     border: 1px;
+     border-radius: 3px;
+     object-fit: contain;
+    
+   
+   }
+   .furniture-item-text{
+       font-size:12px;
+       line-height: 12px;
+       padding-top: 10px;
+       text-align: center;
+   }
+.furniture-item-text h3{
+    font-size:12px;
+    line-height: auto;
+}
+.furniture-item-text p{
+    font-size: 12px;
+    line-height: auto;
+}
+}
